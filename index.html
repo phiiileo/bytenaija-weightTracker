@@ -12,6 +12,7 @@
 <body>
     <main>
         <Section class="row1">
+            <h1> <span>myWeight</span> Tracker</h1>
             <h3>Overview</h3>
             <aside class="user">
                 <div class="details">
@@ -79,17 +80,20 @@
     </main>
 </body>
 <script>
+//Parameters
     let currentWeight = document.getElementById("currentWeight");
     let prevWeight = document.getElementById("prevWeight");
     let weightLoss = document.getElementById("weightLoss");
     let weightTogo = document.getElementById("wightTogo");
     let startWeight = document.getElementById("startWeight")
     let targetWeight = document.getElementById("targetWeight")
+// function handler
     checkweightloss = () => {
-        
-        prevWeight.innerHTML = currentWeight.value;
-    weightLoss.innerHTML = Number(startWeight.innerHTML) - Number(prevWeight.innerHTML);
-    weightTogo.innerHTML = Number(prevWeight.innerHTML)- Number(targetWeight.innerHTML);
+    prevWeight.innerHTML = currentWeight.value;
+    weightLoss.innerHTML = 
+    Number(startWeight.innerHTML) - Number(prevWeight.innerHTML);
+    weightTogo.innerHTML = 
+    Number(prevWeight.innerHTML)- Number(targetWeight.innerHTML);
 
     }
 </script>
