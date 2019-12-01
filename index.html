@@ -17,7 +17,7 @@
             <aside class="user">
                 <div class="details">
                     <p class="name">Phileo Maner</p>
-                    <span>Male, 26 yeras old</span>
+                    <span>Male, 26 years old</span>
                 </div>
                 <img src="mentor1.png" alt="" class="userImage">
 
@@ -65,11 +65,7 @@
             <div class="update">
                 <div class="formgroup">
                     <label for="">Current Weight:</label>
-                    <input 
-                    type="number" id="currentWeight" placeholder="Enter your weight..."
-                    max="300"
-                    min="0"
-                    oninput="checkweightloss()">
+                    <input type="number" id="currentWeight" placeholder="Enter your weight..." max="200" min="0" oninput="checkweightloss()">
                 </div>
             </div>
         </section>
@@ -89,11 +85,18 @@
     let targetWeight = document.getElementById("targetWeight")
 // function handler
     checkweightloss = () => {
-    prevWeight.innerHTML = currentWeight.value;
+        if(currentWeight.value > 200){
+            alert("value is too big");
+            currentWeight.value = 200;
+        }else
+        {
+                prevWeight.innerHTML = currentWeight.value;
     weightLoss.innerHTML = 
     Number(startWeight.innerHTML) - Number(prevWeight.innerHTML);
     weightTogo.innerHTML = 
     Number(prevWeight.innerHTML)- Number(targetWeight.innerHTML);
+
+        }
 
     }
 </script>
