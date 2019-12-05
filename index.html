@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Weight Tracker</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -17,9 +17,9 @@
             <aside class="user">
                 <div class="details">
                     <p class="name">Phileo Maner</p>
-                    <span>Male, 26 years old</span>
+                    <span>Male, 26 years</span>
                 </div>
-                <img src="mentor1.png" alt="" class="userImage">
+                <img src="img/mentor1.png" alt="" class="userImage">
 
             </aside>
         </Section>
@@ -65,7 +65,7 @@
             <div class="update">
                 <div class="formgroup">
                     <label for="">Current Weight:</label>
-                    <input type="number" id="currentWeight" placeholder="Enter your weight..." max="200" min="0" oninput="checkweightloss()">
+                    <input type="number" id="currentWeight" placeholder="Enter your weight..." max="400" min="0" oninput="checkweightloss()">
                 </div>
             </div>
         </section>
@@ -88,17 +88,22 @@
 
 // function handler
     checkweightloss = () => {
-        if(currentWeight.value > 200){
+        if(currentWeight.value > 400){
             alert("value is too big");
-            currentWeight.value = 200;
-        }else
+            currentWeight.value = 400;
+        }
+        else if (currentWeight.value < 0) {
+            alert("weight can not be lesser than 0");
+            currentWeight.value = 0;
+
+        }
+        else
         {
         prevWeight.innerHTML = currentWeight.value;
         weightLoss.innerHTML = 
         Number(startWeight.innerHTML) - Number(prevWeight.innerHTML);
         weightTogo.innerHTML = 
         Number(prevWeight.innerHTML)- Number(targetWeight.innerHTML);
-        console.log(percentprog)
         percentprog.innerHTML  = Math.floor((Number(weightLoss.innerHTML) / Number(startWeight.innerHTML)) * 100) +"%";
         }
 

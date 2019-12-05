@@ -2,11 +2,15 @@
      margin: 0;
      padding: 0;
      box-sizing: border-box;
-     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
- }
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; }
 
  body {
      background-color: rgba(204, 202, 202, 0.301);
+     background-image: url("../img/path.jpg");
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: cover;
+
  }
 
  main {
@@ -128,7 +132,7 @@
  }
 
  .current .container {
-     border: 7px solid lightgray;
+     border: 7px solid #56EADC;
      border-radius: 50%;
      height: 150px;
      width: 150px;
